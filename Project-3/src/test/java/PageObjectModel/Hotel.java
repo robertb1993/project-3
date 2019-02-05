@@ -5,35 +5,41 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PhpTravels {
-	public final WebDriver driver;
+public class Hotel {
+	private WebDriver driver = null;
 
-	public PhpTravels(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public Hotel(WebDriver passWebDriver) {
+		this.driver = passWebDriver;
 
 	}
 
-
-	@FindBy(xpath = "//span[contains(text(),'Search by Hotel or City Name')]")
+	@FindBy(xpath = "//input[@id='qf-0q-destination']")
 	WebElement LandMark;
 
-	@FindBy(xpath = "//div[@id='c3qbi-dateRangeInput-display-start-inner'] ")
+	@FindBy(xpath = "//input[@id='qf-0q-localised-check-in']")
 	WebElement CheckInDate;
 
-	@FindBy(xpath = " //div[@id='c3qbi-dateRangeInput-display-end-inner']")
+	@FindBy(xpath = " //input[@id='qf-0q-localised-check-out']")
 	WebElement CheckOutDate;
 	
-	@FindBy(xpath = " //*[@class='_qC _e _qM']")
+	@FindBy (xpath = "//select[@id='q-rooms']")
+	WebElement Rooms;
+
+	@FindBy(xpath = "//input[@id='travellersInput']")
+	WebElement FamilyMember;
+
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement SearchButton;
-	
+
 	@FindBy(xpath = "")
 	WebElement PressClick;
-	
+
 	@FindBy(xpath = "")
 	WebElement LowestCost;
 
-	
+	public WebDriver Driver() {
+		return driver;
+	}
 
 	public WebElement LandMark() {
 		return LandMark;
@@ -46,6 +52,13 @@ public class PhpTravels {
 
 	public WebElement CheckoutDate() {
 		return CheckOutDate;
+	}
+	public WebElement Rooms() {
+		return Rooms;
+	}
+
+	public WebElement FamilyMember() {
+		return FamilyMember;
 	}
 
 	public WebElement SearchButton() {

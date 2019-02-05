@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="20" name="Suite" parallel="classes">
-  <test thread-count="20" name="Test" parallel="classes">
+<suite thread-count="30" name="Suite">
+  <test thread-count="30" name="Test">
     <classes>
       <class name="TestCases.Hotelsearch"/>
     </classes>
