@@ -16,29 +16,48 @@ public class Hotel {
 	@FindBy(xpath = "//input[@id='qf-0q-destination']")
 	WebElement LandMark;
 
-	@FindBy(xpath = "//input[@id='qf-0q-localised-check-in']")
+	@FindBy(xpath = "//input[@name='q-localised-check-in']")
 	WebElement CheckInDate;
 
 	@FindBy(xpath = " //input[@id='qf-0q-localised-check-out']")
 	WebElement CheckOutDate;
-	
-	@FindBy (xpath = "//select[@id='q-rooms']")
+
+	@FindBy(name = "q-rooms")
 	WebElement Rooms;
 
-	@FindBy(xpath = "//input[@id='travellersInput']")
+	@FindBy(name = "q-room-0-adults")
 	WebElement FamilyMember;
 
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement SearchButton;
 
-	@FindBy(xpath = "")
-	WebElement PressClick;
-
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[@id=\"sort-submenu-price\"]/li[2]/a")
 	WebElement LowestCost;
+
+	@FindBy(id = "qf-0q-compact-occupancy")
+	WebElement roomoptions;
+
+	@FindBy(xpath = "//a[@class='menu-trigger'][contains(text(),'Price')]")
+	WebElement price;
+
+	@FindBy(partialLinkText = "Price (low to high)")
+
+	WebElement lowestprice;
 
 	public WebDriver Driver() {
 		return driver;
+	}
+
+	public WebElement roomoptions() {
+		return roomoptions;
+	}
+
+	public WebElement price() {
+		return price;
+	}
+
+	public WebElement lowestprice() {
+		return lowestprice;
 	}
 
 	public WebElement LandMark() {
@@ -53,6 +72,7 @@ public class Hotel {
 	public WebElement CheckoutDate() {
 		return CheckOutDate;
 	}
+
 	public WebElement Rooms() {
 		return Rooms;
 	}
@@ -64,10 +84,6 @@ public class Hotel {
 	public WebElement SearchButton() {
 		return SearchButton;
 
-	}
-
-	public WebElement PRessClick() {
-		return PressClick;
 	}
 
 	public WebElement LowestCost() {
